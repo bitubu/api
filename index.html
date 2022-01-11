@@ -1,0 +1,1970 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the BitUBU API"
+        >
+    <title>BitUBU API Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-5bbd8224.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-e7783b39.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-new-user-session" class="toc-h2 toc-link" data-title="Create new user session">Create new user session</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-your-profile-and-accounts-info" class="toc-h2 toc-link" data-title="Get your profile and accounts info">Get your profile and accounts info</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wallets" class="toc-h1 toc-link" data-title="Wallets">Wallets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-your-deposit-address-of-specified-currency" class="toc-h2 toc-link" data-title="Get your deposit address of specified currency">Get your deposit address of specified currency</a>
+                  </li>
+                  <li>
+                    <a href="#get-balance-of-all-currency" class="toc-h2 toc-link" data-title="Get balance of all currency">Get balance of all currency</a>
+                  </li>
+                  <li>
+                    <a href="#get-balance-of-specific-currency" class="toc-h2 toc-link" data-title="Get balance of specific currency">Get balance of specific currency</a>
+                  </li>
+                  <li>
+                    <a href="#get-your-all-deposit-history" class="toc-h2 toc-link" data-title="Get your all deposit history">Get your all deposit history</a>
+                  </li>
+                  <li>
+                    <a href="#get-information-of-specified-deposit" class="toc-h2 toc-link" data-title="Get information of specified deposit">Get information of specified deposit</a>
+                  </li>
+                  <li>
+                    <a href="#get-your-all-withdraw-history" class="toc-h2 toc-link" data-title="Get your all withdraw history">Get your all withdraw history</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-information-of-specified-order" class="toc-h2 toc-link" data-title="Get information of specified order">Get information of specified order</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-sell-buy-order" class="toc-h2 toc-link" data-title="Create a Sell/Buy order">Create a Sell/Buy order</a>
+                  </li>
+                  <li>
+                    <a href="#create-multiple-sell-buy-orders" class="toc-h2 toc-link" data-title="Create multiple sell/buy orders">Create multiple sell/buy orders</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-an-order" class="toc-h2 toc-link" data-title="Cancel an order">Cancel an order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-multiple-sell-buy-orders" class="toc-h2 toc-link" data-title="Cancel multiple sell/buy orders">Cancel multiple sell/buy orders</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#trades" class="toc-h1 toc-link" data-title="Trades">Trades</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-your-executed-trades" class="toc-h2 toc-link" data-title="Get your executed trades">Get your executed trades</a>
+                  </li>
+                  <li>
+                    <a href="#get-recent-trades-of-specified-market" class="toc-h2 toc-link" data-title="Get recent trades of specified market">Get recent trades of specified market</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#markets" class="toc-h1 toc-link" data-title="Markets">Markets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-available-markets" class="toc-h2 toc-link" data-title="Get all available markets">Get all available markets</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tickers" class="toc-h1 toc-link" data-title="Tickers">Tickers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-ticker-of-all-markets" class="toc-h2 toc-link" data-title="Get ticker of all markets">Get ticker of all markets</a>
+                  </li>
+                  <li>
+                    <a href="#get-ticker-of-specific-market" class="toc-h2 toc-link" data-title="Get ticker of specific market">Get ticker of specific market</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#currencies" class="toc-h1 toc-link" data-title="Currencies">Currencies</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-list-of-currencies" class="toc-h2 toc-link" data-title="Get list of currencies">Get list of currencies</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-currency" class="toc-h2 toc-link" data-title="Get a specific currency">Get a specific currency</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#order-book" class="toc-h1 toc-link" data-title="Order Book">Order Book</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-the-order-book-of-specified-market" class="toc-h2 toc-link" data-title="Get the order book of specified market">Get the order book of specified market</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#depth" class="toc-h1 toc-link" data-title="Depth">Depth</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-depth-or-specified-market" class="toc-h2 toc-link" data-title="Get depth or specified market">Get depth or specified market</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ohlc" class="toc-h1 toc-link" data-title="OHLC">OHLC</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-ohlc-k-line-of-specific-market" class="toc-h2 toc-link" data-title="Get OHLC(k line) of specific market">Get OHLC(k line) of specific market</a>
+                  </li>
+                  <li>
+                    <a href="#get-k-data-with-pending-trades" class="toc-h2 toc-link" data-title="Get K data with pending trades">Get K data with pending trades</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#fees" class="toc-h1 toc-link" data-title="Fees">Fees</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#returns-trading-fees-for-markets" class="toc-h2 toc-link" data-title="Returns trading fees for markets">Returns trading fees for markets</a>
+                  </li>
+                  <li>
+                    <a href="#returns-deposit-fees-for-currencies" class="toc-h2 toc-link" data-title="Returns deposit fees for currencies">Returns deposit fees for currencies</a>
+                  </li>
+                  <li>
+                    <a href="#returns-withdraw-fees-for-currencies" class="toc-h2 toc-link" data-title="Returns withdraw fees for currencies">Returns withdraw fees for currencies</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#timestamp" class="toc-h1 toc-link" data-title="Timestamp">Timestamp</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-server-current-time" class="toc-h2 toc-link" data-title="Get server current time">Get server current time</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://bitubu.com'>BitUBU</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>BitUBU API is API which can be used by client application.</p>
+
+<p>APIv1_URL: bitubu.com</p>
+
+<p>APIv2_URL: api.bitubu.com</p>
+
+<p>Last update: 10/01/2022</p>
+<h1 id='authentication'>Authentication</h1><h2 id='create-new-user-session'>Create new user session</h2>
+<blockquote>
+<p>To create Bearer Token, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s2">"{APIv1_URL}/users/api/v1/sessions"</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>email, password and otp_code</code> with your personal informations..</p>
+</blockquote>
+
+<p>This endpoint creates a Bearer Token.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST {APIv1_URL}/users/api/v1/sessions</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>application_id</td>
+<td>44b8ddf96e0088e6335efd652ab43cadf22084be7b13e754284fea2c96668907</td>
+</tr>
+<tr>
+<td>email</td>
+<td>example@example.com</td>
+</tr>
+<tr>
+<td>password</td>
+<td>example123456</td>
+</tr>
+<tr>
+<td>otp_code</td>
+<td>123456</td>
+</tr>
+</tbody></table>
+
+<p>application_id is default, do not change it. Add your BitUBU email address and password. If you enabled Google Authenticator, please add it in otp_code. Otherwise you do not need to add otp_code parameter.</p>
+
+<p>You will get Bearer Token and you can use it like:</p>
+
+<p><code>Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</code></p>
+
+<aside class="notice">
+You must replace <code>email, password and otp_code</code> with your personal informations.
+</aside>
+<h1 id='accounts'>Accounts</h1><h2 id='get-your-profile-and-accounts-info'>Get your profile and accounts info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/members/me'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"sn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SN123456789"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"anti_pishing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get your profile and accounts info.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/members/me</code></p>
+<h3 id='headers'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h1 id='wallets'>Wallets</h1><h2 id='get-your-deposit-address-of-specified-currency'>Get your deposit address of specified currency</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/deposit_address?currency=btc'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36ZNxC16mW4g4wYqrmz7hLErRPGDL5cYT7"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves specific currency deposit address. Where to deposit. The address field could be empty when a new address is generating (e.g. for bitcoin), you should try again later in that case.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/deposit_address</code></p>
+<h3 id='headers-2'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>Currency value contains BTC, DOGE, ETH.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>Parameter</code> is required.
+</aside>
+<h2 id='get-balance-of-all-currency'>Get balance of all currency</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/accounts'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dash"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doge"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eth"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ltc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neo"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"try"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ubu"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"waves"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xrp"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves list of user balance currencies.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/accounts</code></p>
+<h3 id='headers-3'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+
+<!-- <aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside> -->
+<h2 id='get-balance-of-specific-currency'>Get balance of specific currency</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/accounts/btc'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves list of user balance in specific currency.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/accounts/&lt;ID&gt;</code></p>
+<h3 id='headers-4'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the currency ticker to retrieve</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h2 id='get-your-all-deposit-history'>Get your all deposit history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/deposits'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3428</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doge"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12937.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54166aa608f3749d8749840248ebe0f385ae626d6c1e3cf1913090bb2ee625eb"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tx_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://live.blockcypher.com/doge/tx/54166aa608f3749d8749840248ebe0f385ae626d6c1e3cf1913090bb2ee625eb"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">83728</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collected"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"heights"</span><span class="p">:</span><span class="w"> </span><span class="mi">4057601</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_confirm"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-10T14:23:16+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-10T14:25:32+03:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves list of user deposits history.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/deposits</code></p>
+<h3 id='headers-5'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>Currency value contains BTC, DOGE, ETH.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Set result limit.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>State of the deposit &quot;pending&quot;</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All <code>parametees</code> optional.
+</aside>
+<h2 id='get-information-of-specified-deposit'>Get information of specified deposit</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/deposit'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="nv">txid</span><span class="o">=</span>54166aa608f3749d8749840248ebe0f385ae626d6c1e3cf1913090bb2ee625eb
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3428</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doge"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12937.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54166aa608f3749d8749840248ebe0f385ae626d6c1e3cf1913090bb2ee625eb"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://live.blockcypher.com/doge/tx/54166aa608f3749d8749840248ebe0f385ae626d6c1e3cf1913090bb2ee625eb"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">83736</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collected"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"heights"</span><span class="p">:</span><span class="w"> </span><span class="mi">4057609</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"min_confirm"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-10T14:23:16+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-10T14:25:32+03:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves details of a specific deposit.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/deposit</code></p>
+<h3 id='headers-6'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>Deposit txid.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<code>parameter</code> is required.
+</aside>
+<h2 id='get-your-all-withdraw-history'>Get your all withdraw history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/withdraws'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2634</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"blockchain_txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"729167df7439bb89422fdb023a4bd5650000ca35ce3fd559b873da9f5228d510"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tx_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.blockchain.com/btc/tx/729167df7439bb89422fdb023a4bd5650000ca35ce3fd559b873da9f5228d510"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3LQcwme5EDfHYWcnVs64dhgx9J6uD9jd2q"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succeed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">15897</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-26T05:48:47+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-26T05:51:34+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-26T05:51:34+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"done_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-26T05:51:34+03:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves list of user withdraws history.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/withdraws</code></p>
+<h3 id='headers-7'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>Currency value contains BTC, DOGE, ETH.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Set result limit.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Page number (defaults to 1).</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All <code>parametees</code> optional.
+</aside>
+<h1 id='orders'>Orders</h1><h2 id='get-information-of-specified-order'>Get information of specified order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/order?id=&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4903</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57026.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wavesusdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-10T09:28:59+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns informations of specific order.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/order?id=&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID is an order id.</td>
+</tr>
+</tbody></table>
+<h3 id='headers-8'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h2 id='create-a-sell-buy-order'>Create a Sell/Buy order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="se">\ </span>
+  <span class="s1">'{APIv2_URL}/api/v2/orders?market=btcusdt&amp;side=sell&amp;volume=0.005&amp;price=51300'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7606</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51300.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-11T05:05:02+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint allows you to buy and sell.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST {APIv2_URL}/api/v2/orders</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>Either &#39;sell&#39; or &#39;buy&#39;.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>The amount user want to sell/buy. An order could be partially executed, e.g. an order sell 5 btc can be matched with a buy 3 btc order, left 2 btc to be sold; in this case the order&#39;s volume would be &#39;5.0&#39;, its remaining_volume would be &#39;2.0&#39;, its executed volume is &#39;3.0&#39;.</td>
+</tr>
+<tr>
+<td>ord_type</td>
+<td>Either &#39;limit&#39; or &#39;market&#39;.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Price for each unit. e.g. If you want to sell/buy 1 btc at 3000 usd, the price is &#39;3000.0&#39;</td>
+</tr>
+</tbody></table>
+<h3 id='headers-9'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h2 id='create-multiple-sell-buy-orders'>Create multiple sell/buy orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="se">\ </span>
+  <span class="s1">'{APIv2_URL}/api/v2/orders/multi'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="nv">market</span><span class="o">=</span>btcusdt <span class="se">\</span>
+  <span class="nt">-d</span> orders: <span class="o">[</span>
+        <span class="o">{</span>side: <span class="s1">'sell'</span>, volume: <span class="s1">'0.005'</span>, price: <span class="s1">'51300.0'</span><span class="o">}</span>,
+        <span class="o">{</span>side: <span class="s1">'buy'</span>,  volume: <span class="s1">'0.005'</span>, price: <span class="s1">'51200.0'</span><span class="o">}</span>
+      <span class="o">]</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7606</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51300.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-11T05:05:02+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7607</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51200.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-11T05:05:03+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint allows you to create multiple buy and sell orders.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST {APIv2_URL}/api/v2/orders/multi</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>orders[side]</td>
+<td>Either &#39;sell&#39; or &#39;buy&#39;.</td>
+</tr>
+<tr>
+<td>orders[volume]</td>
+<td>The amount user want to sell/buy. An order could be partially executed, e.g. an order sell 5 btc can be matched with a buy 3 btc order, left 2 btc to be sold; in this case the order&#39;s volume would be &#39;5.0&#39;, its remaining_volume would be &#39;2.0&#39;, its executed volume is &#39;3.0&#39;.</td>
+</tr>
+<tr>
+<td>orders[ord_type]</td>
+<td>Either &#39;limit&#39; or &#39;market&#39;.</td>
+</tr>
+<tr>
+<td>orders[price]</td>
+<td>Price for each unit. e.g. If you want to sell/buy 1 btc at 3000 usd, the price is &#39;3000.0&#39;</td>
+</tr>
+</tbody></table>
+<h3 id='headers-10'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h2 id='cancel-an-order'>Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s2">"{APIv2_URL}/api/v2/order/delete?id=&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7607</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51300.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-11T05:44:38+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint cancels a specific order.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST {APIv2_URL}/api/v2/order/delete?id=&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the wait order to cancel</td>
+</tr>
+</tbody></table>
+<h3 id='headers-11'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h2 id='cancel-multiple-sell-buy-orders'>Cancel multiple sell/buy orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s2">"{APIv2_URL}/api/v2/orders/clear?side=sell"</span> <span class="se">\</span>
+  <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4904</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-13T14:33:16+03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0012"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0038"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint cancels all of sell or buy orders.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>POST {APIv2_URL}/api/v2/orders/clear?side=&lt;SIDE&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SIDE</td>
+<td>The SIDE is either &quot;buy&quot; or &quot;sell&quot;.</td>
+</tr>
+</tbody></table>
+<h3 id='headers-12'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h1 id='trades'>Trades</h1><h2 id='get-your-executed-trades'>Get your executed trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/trades/my"</span> <span class="se">\</span>
+     <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="nv">market</span><span class="o">=</span>btcusdt
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">371434887</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43000.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000841"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"funds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36.163"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-06T15:57:28+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"maker_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1520860395</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns your executed trades. Trades are sorted in reverse creation order.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/trades/my?market=btcusdt</code></p>
+<h3 id='headers-13'>Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>&quot;Bearer (Token)&quot;</td>
+</tr>
+</tbody></table>
+
+<p>Authentication is required. Generate a new Bearer Token call this GET request.</p>
+
+<aside class="notice">
+You must replace <code>Bearer Token</code> with your token.
+</aside>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>No</td>
+<td>Limit the number of returned trades. Default to 50.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>No</td>
+<td>An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>No</td>
+<td>Trade id. If set, only trades created after the trade will be returned.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>No</td>
+<td>Trade id. If set, only trades created before the trade will be returned.</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>No</td>
+<td>If set, returned trades will be sorted in specific order, default to &#39;desc&#39;.</td>
+</tr>
+</tbody></table>
+<h2 id='get-recent-trades-of-specified-market'>Get recent trades of specified market</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/trades"</span> <span class="se">\</span>
+     <span class="s2">"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="nv">market</span><span class="o">=</span>btcusdt
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">371434887</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43000.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000841"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"funds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36.163"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-06T15:57:28+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"maker_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1520860395</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns recent trades on market, each trade is included only once. Trades are sorted in reverse creation order.</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/trades?market=btcusdt</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>No</td>
+<td>Limit the number of returned trades. Default to 50.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>No</td>
+<td>An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>No</td>
+<td>Trade id. If set, only trades created after the trade will be returned.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>No</td>
+<td>Trade id. If set, only trades created before the trade will be returned.</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>No</td>
+<td>If set, returned trades will be sorted in specific order, default to &#39;desc&#39;.</td>
+</tr>
+</tbody></table>
+<h1 id='markets'>Markets</h1><h2 id='get-all-available-markets'>Get all available markets</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/markets"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ask_precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bid_precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bid_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ask_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns all available markets.</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/markets</code></p>
+<h1 id='tickers'>Tickers</h1><h2 id='get-ticker-of-all-markets'>Get ticker of all markets</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/tickers"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+      </span><span class="nl">"btcusdt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1641877373</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"buy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42288.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42290.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39680.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42376.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">42190.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42290.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.647739"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41528.47221914653320636889"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price_change_percent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+0.24%"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.647739"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns ticker of all markets.</p>
+<h3 id='http-request-17'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/tickers</code></p>
+<h2 id='get-ticker-of-specific-market'>Get ticker of specific market</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/tickers/btcusdt"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1641877486</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"buy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42279.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42290.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39680.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42376.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">42180.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42280.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.68666"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41528.47221914653320636889"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_change_percent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+0.24%"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.68666"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns ticker of specific market.</p>
+<h3 id='http-request-18'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/tickers/&lt;market&gt;</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+</tbody></table>
+<h1 id='currencies'>Currencies</h1><h2 id='get-list-of-currencies'>Get list of currencies</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/currencies'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ubu"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"disabled_deposit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"disabled_withdraw"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UBU"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"explorer_transaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://etherscan.io/tx/#{txid}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"explorer_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://etherscan.io/address/#{address}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_deposit_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_withdraw_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdraw_limit_24h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdraw_limit_72h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_factor"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves list of currencies informations.</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/currencies</code></p>
+<h2 id='get-a-specific-currency'>Get a specific currency</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'{APIv2_URL}/api/v2/currencies/ubu'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ubu"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"disabled_deposit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"disabled_withdraw"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UBU"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"explorer_transaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://etherscan.io/tx/#{txid}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"explorer_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://etherscan.io/address/#{address}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_deposit_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_withdraw_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdraw_limit_24h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdraw_limit_72h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_factor"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves specific currency informations.</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/currencies/ubu</code></p>
+<h1 id='order-book'>Order Book</h1><h2 id='get-the-order-book-of-specified-market'>Get the order book of specified market</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/order_book?market=btcusdt"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7398</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51068.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51068.03"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-24T17:25:35+03:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07575671"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"680.58777655"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.06242963"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01332708"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7393</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51063.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51024.14"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-24T17:25:30+03:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00534645"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00242293"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00292352"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00242293"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns order book of specific pair.</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/order_book?market=btcusdt</code></p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>asks_limit</td>
+<td>Limit the number of returned buy orders. Default to 20.</td>
+</tr>
+<tr>
+<td>bids_limit</td>
+<td>Limit the number of returned buy orders. Default to 20.</td>
+</tr>
+</tbody></table>
+<h1 id='depth'>Depth</h1><h2 id='get-depth-or-specified-market'>Get depth or specified market</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/depth?market=btcusdt"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1641874540</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"51068.0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"0.06242963"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"51063.0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"0.00292352"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns depth or specified market. Both asks and bids are sorted from highest price to lowest.</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/depth?market=btcusdt</code></p>
+<h3 id='url-parameters-9'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Limit the number of returned price levels. Default to 300.</td>
+</tr>
+</tbody></table>
+<h1 id='ohlc'>OHLC</h1><h2 id='get-ohlc-k-line-of-specific-market'>Get OHLC(k line) of specific market</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/k?market=btcusdt"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1641880620</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42090.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42110.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42090.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42103.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0045</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1641880680</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42108.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42121.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42108.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42111.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0052</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1641880740</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42108.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42110.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42090.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42110.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0067</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1641880800</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42110.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42120.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42089.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42089.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0268</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1641880860</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42089.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42110.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42086.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">42110.0</span><span class="p">,</span><span class="w">
+        </span><span class="mf">0.0297</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns OHLC(k line) of specific market.</p>
+<h3 id='http-request-23'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/k?market=btcusdt</code></p>
+<h3 id='url-parameters-10'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>No</td>
+<td>Limit the number of returned trades. Default to 30.</td>
+</tr>
+<tr>
+<td>period</td>
+<td>No</td>
+<td>Time period of K line, default to 1. You can choose between 1, 5, 15, 30, 60, 120, 240, 360, 720, 1440, 4320, 10080</td>
+</tr>
+<tr>
+<td>time_from</td>
+<td>No</td>
+<td>An integer represents the seconds elapsed since Unix epoch. If set, only k-line data after that time will be returned.</td>
+</tr>
+<tr>
+<td>time_to</td>
+<td>No</td>
+<td>An integer represents the seconds elapsed since Unix epoch. If set, only k-line data till that time will be returned.</td>
+</tr>
+</tbody></table>
+<h2 id='get-k-data-with-pending-trades'>Get K data with pending trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/k_with_pending_trades"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="nv">market</span><span class="o">=</span>btcusdt <span class="se">\</span>
+     <span class="nt">-d</span> <span class="nv">trade_id</span><span class="o">=</span>1641880620
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"k"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="mi">1641881100</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42140.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42160.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42140.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42140.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">0.0156</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="mi">1641881160</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42140.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42140.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42120.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42120.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">0.0213</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="mi">1641881220</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42120.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42130.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42120.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">42120.0</span><span class="p">,</span><span class="w">
+            </span><span class="mf">0.0047</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">372694963</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1641882851</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42110.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000075"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"tid"</span><span class="p">:</span><span class="w"> </span><span class="mi">372694964</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1641882851</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42100.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0005"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns K data with pending trades, which are the trades not included in K data yet, because there&#39;s delay between trade generated and processed by K data generator.</p>
+<h3 id='http-request-24'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/k_with_pending_trades?market=btcusdt&amp;trade_id=&lt;ID&gt;</code></p>
+<h3 id='url-parameters-11'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>Yes</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. &#39;btcusd&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>trade_id</td>
+<td>Yes</td>
+<td>The trade id of the first trade you received.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>No</td>
+<td>Limit the number of returned trades. Default to 30.</td>
+</tr>
+<tr>
+<td>period</td>
+<td>No</td>
+<td>Time period of K line, default to 1. You can choose between 1, 5, 15, 30, 60, 120, 240, 360, 720, 1440, 4320, 10080</td>
+</tr>
+<tr>
+<td>time_from</td>
+<td>No</td>
+<td>An integer represents the seconds elapsed since Unix epoch. If set, only k-line data after that time will be returned.</td>
+</tr>
+<tr>
+<td>time_to</td>
+<td>No</td>
+<td>An integer represents the seconds elapsed since Unix epoch. If set, only k-line data till that time will be returned.</td>
+</tr>
+</tbody></table>
+<h1 id='fees'>Fees</h1><h2 id='returns-trading-fees-for-markets'>Returns trading fees for markets</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/fees/trading"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ask_fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"relative"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"bid_fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"relative"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns trading fees for markets.</p>
+<h3 id='http-request-25'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/fees/trading</code></p>
+<h2 id='returns-deposit-fees-for-currencies'>Returns deposit fees for currencies</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/fees/deposit"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns deposit fees for currencies.</p>
+<h3 id='http-request-26'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/fees/deposit</code></p>
+<h2 id='returns-withdraw-fees-for-currencies'>Returns withdraw fees for currencies</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/fees/withdraw"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0006"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns withdraw fees for currencies.</p>
+<h3 id='http-request-27'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/fees/withdraw</code></p>
+<h1 id='timestamp'>Timestamp</h1><h2 id='get-server-current-time'>Get server current time</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s2">"{APIv2_URL}/api/v2/timestamp"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"serverTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1641875314624</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns server current time, in seconds since Unix epoch.</p>
+<h3 id='http-request-28'>HTTP Request</h3>
+<p><code>GET {APIv2_URL}/api/v2/timestamp</code></p>
+<h1 id='errors'>Errors</h1>
+<p>The BitUBU API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your Bearer Token is wrong.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified requests could not be found.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
