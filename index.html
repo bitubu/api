@@ -470,8 +470,6 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='https://bitubu.github.io/api/'>English</a> | <a href='https://bitubu.github.io/api/tr'>Türkçe</a></li>
-            <li></li>
-            <li><a href='https://bitubu.com'>BitUBU</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -480,8 +478,6 @@
         <h1 id='introduction'>Introduction</h1>
 <p>BitUBU API is API which can be used by client application.</p>
 
-<p>APIv1_URL: bitubu.com</p>
-
 <p>APIv2_URL: api.bitubu.com</p>
 
 <p>Last update: 10/01/2022</p>
@@ -489,7 +485,7 @@
 <blockquote>
 <p>To create Bearer Token, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s2">"{APIv1_URL}/users/api/v1/sessions"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s2">"{APIv2_URL}/users/api/v1/sessions"</span>
 </code></pre></div>
 <blockquote>
 <p>Make sure to replace <code>email, password and otp_code</code> with your personal informations..</p>
@@ -497,7 +493,7 @@
 
 <p>This endpoint creates a Bearer Token.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST {APIv1_URL}/users/api/v1/sessions</code></p>
+<p><code>POST {APIv2_URL}/users/api/v1/sessions</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -505,10 +501,6 @@
 <th>Default</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>application_id</td>
-<td>44b8ddf96e0088e6335efd652ab43cadf22084be7b13e754284fea2c96668907</td>
-</tr>
 <tr>
 <td>email</td>
 <td>example@example.com</td>
@@ -523,7 +515,7 @@
 </tr>
 </tbody></table>
 
-<p>application_id is default, do not change it. Add your BitUBU email address and password. If you enabled Google Authenticator, please add it in otp_code. Otherwise you do not need to add otp_code parameter.</p>
+<p>Add your BitUBU email address and password. If you enabled Google Authenticator, please add it in otp_code. Otherwise you do not need to add otp_code parameter.</p>
 
 <p>You will get Bearer Token and you can use it like:</p>
 
